@@ -1,0 +1,23 @@
+{
+  "name": "stripe-demo",
+  "version": "1.0.0",
+  "description": "Stripe is an Irish-American financial services and software as a service company dual. \u0016https://stripe.com/",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon server.js"
+  },
+  "keywords": [
+    "stripe",
+    "payment",
+    "gateway"
+  ],
+  "author": "MD RAKIB HASAN",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "stripe": "^8.183.0"
+  }
+}
