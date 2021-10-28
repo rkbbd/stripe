@@ -4,6 +4,9 @@ app.set('view engine', 'ejs');
 
 let stripe;
 
+///////////Summary///////////
+// Card Payment
+////////////////////////////
 app.get('/', function (req, res) {
   try {
     stripe = require("stripe")('sk_test_51JcWm6AvjocdzRpfvenHnGF5b96jyNPkF0DBXlUbkwPyicekoGBvPGpUDBY6XTuf8NTsO8d83SOi3fwsjJFQd3BY00x9awPg6v');
@@ -32,11 +35,6 @@ app.post('/create-payment-intent', async function (req, res) {
   }
 });
 
-
-
-
-//TEST
-//TEST Checkout--Successful
 ///////////Summary///////////
 // Checkout and recurring payment
 ////////////////////////////
@@ -60,6 +58,9 @@ app.get('/public/success-redirect', //Checkout_page success url
     res.render('pages/success-redirect');
   });
 
+///////////Summary///////////
+// recurring payment
+////////////////////////////
 app.get('/public/recurring-payment',
   async (req, res) => {
     try {
@@ -178,8 +179,6 @@ app.get('/public/recurring-payment',
 /////////////////////////////
 // doc: https://stripe.com/docs/payments/save-and-reuse
 /////////////////////////////
-
-
 app.get('/public/card_wallet', async (req, res) => {
   const customer = await stripe.customers.create();
   console.log('customer-', customer)
@@ -223,17 +222,7 @@ app.get('/public/future_payment', async (req, res) => {
     // const paymentIntentRetrieved = await stripe.paymentIntents.retrieve(err.raw.payment_intent.id);
     // console.log('PI retrieved: ', paymentIntentRetrieved.id);
   }
-
-
 });
-
-
-
-
-
-
-
-
 
 app.listen(8080);
 console.log('Server is listening on port 8080');
